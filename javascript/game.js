@@ -89,7 +89,7 @@ else {
 }
 
 if (current.indexOf("_") < 0) {
-    alert("You're Fruitastic!")
+    alert("🍓🍐You're Fruitastic🍍🍉!")
 
     var win = document.getElementById("wins");
     win.innerHTML = wins;
