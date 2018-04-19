@@ -2,8 +2,9 @@
 	box-sizing: border-box;
 }
 body {
-	background-image: url("http://4.bp.blogspot.com/-hiYZzjGUjAU/UW-LPXMlVQI/AAAAAAAABaY/2SkmDvDz8E4/s1600/Cartoon%2BBeach%2BWallpaper-737352.jpg");
 	height: 100%;
+	background-image: url("http://4.bp.blogspot.com/-hiYZzjGUjAU/UW-LPXMlVQI/AAAAAAAABaY/2SkmDvDz8E4/s1600/Cartoon%2BBeach%2BWallpaper-737352.jpg");
+
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -103,4 +104,8 @@ img {
 	color: #ffffff;
 	position: relative;
 	bottom: 1px;
+}
+.footer,
+.push {
+  height: 50px;
 }
