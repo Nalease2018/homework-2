@@ -1,8 +1,8 @@
-var guesses = [];
-var guessesLeft = 7;
-var wins = 1;
-var userGuess = "";
-var answer;
+var Guesses = [];
+var GuessesLeft = 10;
+var Wins = 1;
+var UserGuess = "";
+var Answer;
 var optionNumber;
 var options = [{
         name: "banana",
@@ -38,8 +38,8 @@ function begin() {
     currentWord = options[optionNumber]["name"];
     currentWordArr = currentWord.split("");
     currentWordArr = currentWord.toLowerCase();
-
     console.log(currentWord);
+
 for (var i = 0; i < currentWordArr.length; i++) {
     if (currentWordArr[i] === ' ') {
         hidden.push(" ");
@@ -53,65 +53,13 @@ var hiddenHTML = document.getElementById("current_word");
     hiddenHTML.innerHTML = hidden.join("");
 };
 
-window.addEventListener('keydown', function(event) {
-    console.log(event);
-    userGuess = event['key'];
-    checkLetters();
-});
 
-function checkLetters() {
-
-var current = document.getElementById("current_word").innerHTML.split('');
-
-if (currentWordArr.includes(userGuess) && guesses.indexOf(userGuess) < 0) {
-    console.log("letterfound");
-    guesses.push(userGuess);
-
-for (var i = 0; i < currentWordArr.length; i++) {
-    if (currentWordArr[i] === userGuess) {
-        current[i] = currentWordArr[i];
-        var currentHTML = document.getElementById("current_word");
-        currentHTML.innerHTML = current.join("");
-
-}
-}
-var alreadyGuessed = document.getElementById("already_guessed");
-        alreadyGuessed.innerHTML = guesses.join(" ");
-} 
-else {
-    guesses.push(userGuess);
-    guessesLeft--;
-    var alreadyGuessed = document.getElementById("already_guessed");
-    alreadyGuessed.innerHTML = guesses.join(" ");
-    var left = document.getElementById("guesses_left");
-    left.innerHTML = guessesLeft;
-    console.log(guessesLeft);
-}
-
-if (current.indexOf("_") < 0) {
-    alert("🍓🍐You're Fruitastic🍍🍉!")
-
-    var win = document.getElementById("wins");
-    win.innerHTML = wins;
-    wins++;
-    document.getElementById("pre").innerHTML = currentWordArr;
-    reset();
-    begin();
-};
-if (guessesLeft === 0) {
-    alert("It's begininng to look a lot like christmas, Try Again!")
-    document.getElementById("picture").src = options[optionNumber]["picture"];
-    document.getElementById("pre").innerHTML = currentWordArr;
-    reset();
-    begin();
-    }
-};
 
 function reset() {
-guesses = [];
-guessesLeft = 7;
-userGuess = "";
-answer;
+Guesses = [];
+GuessesLeft = 10;
+UserGuess = "";
+Answer;
 optionNumber;
 options = [{    
     name: "banana",

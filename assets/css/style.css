@@ -33,7 +33,7 @@ h1 {
 	padding: 5px;
 }
 
-.main_content {
+.mainContent {
 	text-align: center;
 	background: #0AAEB6;
 	margin: auto;
@@ -81,17 +81,17 @@ img {
 	padding: 10px;
 }
 
-.current_word {
+.currentWord {
 	margin: 10px;
 	padding: 10px;
 }
 
-.guesses_left {
+.guessesLeft {
 	margin: 10px;
 	padding: 10px;
 }
 
-.already_guessed {
+.alreadyGuessed {
 	margin: 10px;
 	padding: 10px;
 }
