@@ -52,6 +52,58 @@ for (var i = 0; i < currentWordArr.length; i++) {
 var hiddenHTML = document.getElementById("current_word");
     hiddenHTML.innerHTML = hidden.join("");
 };
+window.addEventListener('keydown', function(event) {
+    console.log(event);
+    UserGuess = event['key'];
+    checkLetters();
+});
+function checkLetters() {
+
+var current = document.getElementById("currentWord").innerHTML.split('');
+
+if (currentWordArr.includes(UserGuess) && Guesses.indexOf(UserGuess) < 0) {
+    console.log("letterfound");
+    Guesses.push(UserGuess);
+
+for (var i = 0; i < currentWordArr.length; i++) {
+    if (currentWordArr[i] === UserGuess) {
+        current[i] = currentWordArr[i];
+        var currentHTML = document.getElementById("currentWord");
+        currentHTML.innerHTML = current.join("");
+
+}
+}
+var alreadyGuessed = document.getElementById("alreadyGuessed");
+        alreadyGuessed.innerHTML = Guesses.join(" ");
+} 
+else {
+    Guesses.push(UserGuess);
+    GuessesLeft--;
+    var alreadyGuessed = document.getElementById("alreadyGuessed");
+    alreadyGuessed.innerHTML = Guesses.join(" ");
+    var left = document.getElementById("GuessesLeft");
+    left.innerHTML = GuessesLeft;
+    console.log(GuessesLeft);
+}
+
+if (current.indexOf("_") < 0) {
+    alert("You're Fruitastic!")
+
+    var win = document.getElementById("wins");
+    win.innerHTML = wins;
+    wins++;
+    document.getElementById("pre").innerHTML = currentWordArr;
+    reset();
+    begin();
+};
+if (GuessesLeft === 0) {
+    alert("It's begininng to look a lot like christmas, Try Again!")
+    document.getElementById("picture").src = options[optionNumber]["picture"];
+    document.getElementById("pre").innerHTML = currentWordArr;
+    reset();
+    begin();
+    }
+};
 
 
 
